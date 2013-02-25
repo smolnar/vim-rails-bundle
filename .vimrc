@@ -103,7 +103,7 @@
         if !&binary && &filetype != 'diff'
           normal mz
           normal Hmy
-          %s/\s\+$//e
+          %s/^\s\+$//e
           normal 'yz<CR>
           normal `z
         endif
@@ -145,7 +145,7 @@
       nnoremap <c-s> :w<cr>
 
       " Quit like a pro
-      nnoremap <c-a-q> :q<CR>
+      nnoremap <C-M-q> :q<CR>
       nnoremap <leader>q :q<CR>
 
       " this key combination gets rid of the search highlights.
@@ -153,20 +153,23 @@
 
       " open vertical split and switch to it
       nnoremap <leader>v <C-w>v<C-w>l
-      nnoremap <C-A>v <C-w>v<C-w>l
+      nnoremap <C-M>v <C-w>v<C-w>l
 
       " open horizontal  split and switch to it
       nnoremap <leader>h :split<CR>
 
       " tabs - moving around, (CTRL+n to new tab)
       map <C-n> :tabnew<CR>
-      map <C-A-n> :tabedit %<CR>
-      map <A-Right> :tabnext<cr>
-      map <A-Left> :tabprevious<cr>
+      map <C-M-n> :tabedit %<CR>
+      map <M-Right> :tabnext<cr>
+      map <M-Left> :tabprevious<cr>
 
       " buffers - moving around
       map <A-x-Left> :bprevious<CR>
       map <A-x-Right> :bNext<CR>
+
+      " Write and quit current buffer
+      nnoremap <C-M-w> :wq<CR>
 
       " run ctags silently
       map <leader>t :silent! !ctags -R . &<CR>
@@ -326,7 +329,7 @@
 
       " Fugitive {{{
       nnoremap <leader>gs :Gstatus<cr>
-      nnoremap <leader>gc :Gcommit<cr>
+      nnoremap <leader>gc :Gcommit 
       nnoremap <leader>gd :Gdiff<cr>
       " }}}
 
@@ -386,9 +389,8 @@
       " Bindings
       " {{{
       nnoremap <c-o> :browse tabnew :pwd<CR>
-      nnoremap <c-a-s> :browse saveas :pwd<CR>
-      nnoremap <c-a-w> :wq<CR>
-      nnoremap <c-a-f> :set guifont=*<CR>
+      nnoremap <C-M-s> :browse saveas :pwd<CR>
+      nnoremap <C-M-f> :set guifont=*<CR>
       "
       " }}}
     endif
