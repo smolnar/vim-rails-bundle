@@ -1,4 +1,5 @@
-.vim/tmp/*
-.vim/swap/*
+.vim/tmp/undo/*
+.vim/tmp/swap/*
+.vim/tmp/backup/*
 *~
 *.log
