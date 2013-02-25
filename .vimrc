@@ -100,9 +100,14 @@
 
       " Removes trailing spaces
       function! TrimWhiteSpace()
-        %s/^\s*$//e
-        ''
-      :endfunction
+        if !&binary && &filetype != 'diff'
+          normal mz
+          normal Hmy
+          %s/\s\+$//e
+          normal 'yz<CR>
+          normal `z
+        endif
+      endfunction
 
       " Filter and trim whitespaces
       autocmd FileWritePre * :call TrimWhiteSpace()
@@ -110,14 +115,11 @@
       autocmd FilterWritePre * :call TrimWhiteSpace()
       autocmd BufWritePre * :call TrimWhiteSpace()
 
-      map <F8> :call TrimWhiteSpace()<CR>
-      map! <F8> :call TrimWhiteSpace()<CR>
-
       " Use relative numbering in insert mode
       autocmd InsertEnter * :set relativenumber
       autocmd InsertLeave * :set number
 
-      "}}}
+    "}}}
 
     " Binding
     " {{{
@@ -174,7 +176,7 @@
       nnoremap <leader>y "+y
 
       " start ack search, (using ACK tool, like grep but for source code)
-      nnoremap <leader>a :Ack 
+      nnoremap <leader>a :Ack
 
       " reformat whole file
       nnoremap <leader>= ggVG=
@@ -342,23 +344,23 @@
       " Rails
       " {{{
       nnoremap <C-p> :completefunc()<CR>
-      nnoremap <F6> :Rails 
-      nnoremap <F7> :Rgenerate 
-      nnoremap <F8> :Rake 
-      nnoremap <F9> :Rinitializer 
-      nnoremap <F10> :Rmodel 
-      nnoremap <F11> :Rview 
-      nnoremap <F12> :Rcontroller 
+      nnoremap <F6> :Rails
+      nnoremap <F7> :Rgenerate
+      nnoremap <F8> :Rake
+      nnoremap <F9> :Rinitializer
+      nnoremap <F10> :Rmodel
+      nnoremap <F11> :Rview
+      nnoremap <F12> :Rcontroller
 
-      nnoremap <leader>ra :Rails 
-      nnoremap <leader>rg :Rgenerate 
-      nnoremap <leader>rr :Rake 
-      nnoremap <leader>ri :Rinitializer 
+      nnoremap <leader>ra :Rails
+      nnoremap <leader>rg :Rgenerate
+      nnoremap <leader>rr :Rake
+      nnoremap <leader>ri :Rinitializer
       " routes leads to empty initializer path
       nnoremap <leader>ro :Rinitializer<CR>
-      nnoremap <leader>rv :Rview 
-      nnoremap <leader>rc :Rcontroller 
-      nnoremap <leader>rm :Rmodel 
+      nnoremap <leader>rv :Rview
+      nnoremap <leader>rc :Rcontroller
+      nnoremap <leader>rm :Rmodel
 
       " set rails status line
       let g:rails_statusline = 1
