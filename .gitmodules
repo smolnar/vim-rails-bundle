@@ -76,9 +76,6 @@
 [submodule ".vim/bundle/ctrlp.vim"]
 	path = .vim/bundle/ctrlp.vim
 	url = https://github.com/kien/ctrlp.vim.git
-[submodule ".vim/bundle/ack"]
-	path = .vim/bundle/ack
-	url = git://github.com/mileszs/ack.vim.git
 [submodule ".vim/bundle/clang_complete.git"]
 	path = .vim/bundle/clang_complete.git
 	url = git://github.com/Rip-Rip/clang_complete.git
