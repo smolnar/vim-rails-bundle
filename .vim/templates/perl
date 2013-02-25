@@ -1,0 +1,6 @@
+#!/usr/bin/perl
+use strict;
+use warnings;
+
+
+# vim: set ts=8 et sw=8 sts=0 sta filetype=perl :
