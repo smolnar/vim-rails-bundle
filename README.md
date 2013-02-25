@@ -2,7 +2,7 @@
 
 Ruby on Rails IDE inside VIM in seconds!
 
-## Instalation
+## Installation
 
 ### Requirements
 
@@ -30,7 +30,6 @@ This is a list of keyboard mapping inside `vim.rc`. Change them according your t
 
 | Keys          | Action        |
 | ------------- |:-------------:|
-
 | *Space* | Open all folds |
 
 
