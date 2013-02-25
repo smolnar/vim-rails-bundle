@@ -36,7 +36,7 @@
     " }}}
 
     " UI {{{
-      colorscheme Monokai
+      colorscheme Monokai " Color scheme
 
       set tabstop=4 " when there's tab, it should be indented by 4 spaces
       set shiftwidth=2 " Number of spaces to use for each step of (auto)indent
@@ -153,7 +153,6 @@
 
       " open vertical split and switch to it
       nnoremap <leader>v <C-w>v<C-w>l
-      nnoremap <C-M>v <C-w>v<C-w>l
 
       " open horizontal  split and switch to it
       nnoremap <leader>h :split<CR>
@@ -176,13 +175,43 @@
 
       " copy from clipboard with ease (<leader>p => paste what you copied by CTRL+c in clipboard)
       nnoremap <leader>p "+p
-      nnoremap <leader>y "+y
+      nnoremap <leader>y "+yy
 
       " start ack search, (using ACK tool, like grep but for source code)
       nnoremap <leader>a :Ack
 
       " reformat whole file
       nnoremap <leader>= ggVG=
+
+      " use :w!! to write to a file using sudo if you forgot to 'sudo vim file'
+      " (it will prompt for sudo password when writing)
+      cmap w!! %!sudo tee > /dev/null %
+
+      " upper/lower word
+      nmap <leader>u mQviwU`Q
+      nmap <leader>l mQviwu`Q
+
+      " upper/lower first char of word
+      nmap <leader>wu mQgewvU`Q
+      nmap <leader>wl mQgewvu`Q
+
+      " cd to the directory containing the file in the buffer
+      nmap <silent> <leader>cd :lcd %:h<CR>
+
+      " Create the directory containing the file in the buffer
+      nmap <silent> <leader>md :!mkdir -p %:p:h<CR>
+
+      " Swap two words
+      nmap <silent> gw :s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR>`'
+
+      " Map the arrow keys to be based on display lines, not physical lines
+      map <Down> gj
+      map <Up> gk
+
+      " Toggle hlsearch with <leader>hs
+      nmap <leader>hs :set hlsearch! hlsearch?<CR>
+
+   " }}}
 
     " Filetypes
     " {{{
@@ -288,9 +317,9 @@
 
       map <leader>f :CtrlP<cr>
       map <leader>b :CtrlPMRU<cr>
-      map <leader>gv :CtrlP app/views<cr>
-      map <leader>gc :CtrlP app/controllers<cr>
-      map <leader>gm :CtrlP app/models<cr>
+      map <leader>cv :CtrlP app/views<cr>
+      map <leader>cc :CtrlP app/controllers<cr>
+      map <leader>cm :CtrlP app/models<cr>
       " }}}
 
       " Gist
@@ -391,6 +420,31 @@
       nnoremap <c-o> :browse tabnew :pwd<CR>
       nnoremap <C-M-s> :browse saveas :pwd<CR>
       nnoremap <C-M-f> :set guifont=*<CR>
+
+      " Map Alt-# to switch tabs
+      map  <M-0> 0gt
+      imap <M-0> <Esc>0gt
+      map  <M-1> 1gt
+      imap <M-1> <Esc>1gt
+      map  <M-2> 2gt
+      imap <M-2> <Esc>2gt
+      map  <M-3> 3gt
+      imap <M-3> <Esc>3gt
+      map  <M-4> 4gt
+      imap <M-4> <Esc>4gt
+      map  <M-5> 5gt
+      imap <M-5> <Esc>5gt
+      map  <M-6> 6gt
+      imap <M-6> <Esc>6gt
+      map  <M-7> 7gt
+      imap <M-7> <Esc>7gt
+      map  <M-8> 8gt
+      imap <M-8> <Esc>8gt
+      map  <M-9> 9gt
+      imap <M-9> <Esc>9gt
+    " }}}
+
+
       "
       " }}}
     endif
