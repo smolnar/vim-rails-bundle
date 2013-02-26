@@ -1,0 +1,12 @@
+version: 0.1
+path:
+  home: # use custom path when needed
+  desktop: /usr/share/applications
+  bin: /usr/bin
+vim:
+  dir: .vim
+  config: .vimrc
+  gtk: .gtkrc-2.0-vim
+gvim:
+  script: gvim_for_rails
+  desktop: gvim_for_rails.desktop
