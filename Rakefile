@@ -2,9 +2,9 @@ require 'rubygems'
 require 'rake'
 require './core/log'
 
-namespace :install do
+namespace :bundle do
 
-  PATH = ENV['HOME']
+  PATH = '/home/samuel/tmp/skuska'
 
   task :greeting do
     Log.msg :green, <<EOF
@@ -14,48 +14,72 @@ Rails Bundle for Vim
 
 Almost complete Ruby on Rails environment inside Vim.
 Contribute to https://github.com/smolnar/vim-rails-bundle for everlasting fame and all the women!
--------------------------------------------------------------------------------------------------
+--------------------
 EOF
   end
 
   desc "Install vim configurations"
-  task :vim do
+  task :config do
     Rake::Task['install:greeting'].invoke
 
     Log.info "Starting installing Vim to #{PATH} ..."
 
-    vim_dir    = File.join(Dir.pwd, '.vim')
-    vim_config = File.join(Dir.pwd, '.vimrc')
+    warn = false
 
-    vim_dir_dest = File.join(PATH, File.basename(vim_dir))
-    vim_config_dest = File.join(PATH, File.basename(vim_config))
+    dir  = { src: File.join(Dir.pwd, '.vim') }
+    conf = { src: File.join(Dir.pwd, '.vimrc') }
 
-    if File.exists?(vim_dir_dest)
-      Log.warn "#{vim_dir_dest} already exists. Merge it on your own!"
+    dir[:dest]    = File.join(PATH, File.basename(dir[:src]))
+    conf[:dest] = File.join(PATH, File.basename(conf[:src]))
 
-      dest_backup = "#{vim_dir_dest}.backup"
+    if File.exists?(dir[:dest])
+      Log.warn "#{dir[:dest]} already exists. Remove or merge it on your own!"
 
-      Log.info "Backuping #{vim_dir_dest} to #{dest_backup} (just to be sure) ..."
+      warn = true
     else
-      Log.info "Symlinking #{vim_dir} to #{vim_dir_dest}"
+      Log.info "Symlinking #{dir[:src]} to #{dir[:dest]}"
 
-      FileUtils.ln_s vim_dir, vim_dir_dest
+      FileUtils.ln_s dir[:src], dir[:dest]
     end
 
-    if File.exists?(vim_config_dest)
-      Log.warn "#{vim_config_dest} already exists. Merge it on your own!"
-    else
-      Log.info "Copying #{vim_config} to #{vim_config_dest}"
+    if File.exists?(conf[:dest])
+      Log.warn "#{conf[:dest]} already exists. Remove or merge it on your own!"
 
-      FileUtils.cp vim_config, vim_config_dest
+      warn = true
+    else
+      Log.info "Copying #{conf[:src]} to #{conf[:dest]}"
+
+      FileUtils.cp conf[:src], conf[:dest]
     end
 
-    unless File.exists?(vim_config_dest) || File.exists?(vim_dir_dest)
-      Log.error "Something went wrong. The #{vim_config_dest} or #{vim_dir_dest} does not exists!"
+    unless File.exists?(dir[:dest]) || File.exists?(conf[:dest])
+      Log.error "Something went wrong. The #{dir[:dest]} or #{conf[:dest]} does not exists!"
       exit 1
     end
 
-    Log.success "Yay! It's probably done! Hack on!"
+    if warn
+      Log.warn "Ooops. There's been some warning messages. You better check it out!"
+    else
+      Log.success "Yay! It's probably done! Hack on!"
+    end
+  end
+
+
+  desc 'Install gtk roules for more fancy GVim look.'
+  task :gtk do
+    Rake::Task['install:greeting'].invoke
+
+    Log.msg 'Installing fancy gtk roules for GVim appearance.'
+
+    file     = '.gtkrc-2.0-vim'
+    gtk_vim  = { src: File.join(Dir.pwd, file), dest: File.join(ENV['HOME'], file) }
+    gtk_rc   = File.join(ENV['HOME'], '.gtkrc-2.0')
+
+    File.open(gtk_rc, 'a') do |f|
+      f.write("include \"#{gtk_vim[:dest]}\"")
+    end
+
+    File.ln_s gtk_vim[:src], gtk_vim[:dest]
   end
 
 end
