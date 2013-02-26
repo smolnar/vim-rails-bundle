@@ -1,9 +1,9 @@
 # Rails Bundle for Vim
 
 Vim as a Ruby on Rails IDE with all the cool plugins and nifty configuration.
-Follow the simple installation guide and hack in no time!
+Follow the simple installation guide and hack in no time! 
 
-[See for yourself](https://raw.github.com/smolnar/dotfiles/ubuntu/screenshots/vim.png).
+[See for yourself]() (screencast).
 
 ## Installation
 
@@ -37,8 +37,17 @@ git submodule init
 git submodule update
 ```
 
-For updating submodules, just go to `.vim/bundle/any-vim-plugin` and run `git pull`.
-For updating all submodules, go to repo root (`.vim-rails-bundle`) and run `git submodule foreach git pull`.
+For updating submodules:
+```
+cd .vim/bundle/any-vim-plugin
+git pull
+```
+
+For updating all submodules: 
+```
+cd .vim-rails-bundle
+git submodule foreach git pull
+```
 
 Choose what you want to install:
 
