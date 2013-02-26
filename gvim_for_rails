@@ -1,0 +1,6 @@
+#! /bin/zsh
+# Change it to /bin/bash, if you use bash
+
+source $HOME/.zshrc # change to .bashrc in case of bash
+gvim
+exit
