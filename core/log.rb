@@ -30,7 +30,7 @@ class Log
   end
 
   def self.warn(msg)
-    msg(:yellow, format('*', msg))
+    msg(:yellow, format('~', msg))
   end
 
   def self.error(msg)
