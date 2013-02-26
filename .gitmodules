@@ -82,3 +82,6 @@
 [submodule ".vim/bundle/vim-git"]
 	path = .vim/bundle/vim-git
 	url = git://github.com/tpope/vim-git.git
+[submodule ".vim/bundle/vim-pathogen"]
+	path = .vim/bundle/vim-pathogen
+	url = git://github.com/tpope/vim-pathogen.git
