@@ -1,5 +1,7 @@
 " Init
 " {{{
+  runtime bundle/vim-pathogen/autoload/pathogen.vim
+
   call pathogen#infect()
   call pathogen#helptags()
 
@@ -178,7 +180,7 @@
       nnoremap <leader>y "+yy
 
       " start ack search, (using ACK tool, like grep but for source code)
-      nnoremap <leader>a :Ack
+      nnoremap <leader>a :Ack 
 
       " reformat whole file
       nnoremap <leader>= ggVG=
@@ -376,23 +378,23 @@
       " Rails
       " {{{
       nnoremap <C-p> :completefunc()<CR>
-      nnoremap <F6> :Rails
-      nnoremap <F7> :Rgenerate
-      nnoremap <F8> :Rake
-      nnoremap <F9> :Rinitializer
-      nnoremap <F10> :Rmodel
-      nnoremap <F11> :Rview
-      nnoremap <F12> :Rcontroller
+      nnoremap <F6> :Rails 
+      nnoremap <F7> :Rgenerate 
+      nnoremap <F8> :Rake 
+      nnoremap <F9> :Rinitializer 
+      nnoremap <F10> :Rmodel 
+      nnoremap <F11> :Rview 
+      nnoremap <F12> :Rcontroller 
 
-      nnoremap <leader>ra :Rails
-      nnoremap <leader>rg :Rgenerate
-      nnoremap <leader>rr :Rake
-      nnoremap <leader>ri :Rinitializer
+      nnoremap <leader>ra :Rails 
+      nnoremap <leader>rg :Rgenerate 
+      nnoremap <leader>rr :Rake 
+      nnoremap <leader>ri :Rinitializer 
       " routes leads to empty initializer path
       nnoremap <leader>ro :Rinitializer<CR>
-      nnoremap <leader>rv :Rview
-      nnoremap <leader>rc :Rcontroller
-      nnoremap <leader>rm :Rmodel
+      nnoremap <leader>rv :Rview 
+      nnoremap <leader>rc :Rcontroller 
+      nnoremap <leader>rm :Rmodel 
 
       " set rails status line
       let g:rails_statusline = 1
