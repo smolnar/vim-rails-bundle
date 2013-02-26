@@ -26,10 +26,14 @@ For other distros or package managers, refer to package management documentation
 
 ### Setup
 
-Run this to install bundle:
+Clone the repository:
 ```
 git clone git://github.com/smolnar/vim-rails-bundle.git .vim-rails-bundle
+cd .vim-rails-bundle
 ```
+
+Choose what you want to install:
+
 
 ## Configuration
 ### Keyboard
@@ -65,6 +69,7 @@ This is a list of keyboard mapping inside `vim.rc`. Change them according your t
 | `Leader` + wl| Lowercases first letter of current word.|
 | `Leader` + c + d| Change directory to the directory containing the file in the buffer.|
 | `Leader` + g + w| Swap two words. |
+| **Plugins** | |
 
 #### Plugins
 As they appear in `vim.rc`.
