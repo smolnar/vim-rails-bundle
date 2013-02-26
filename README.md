@@ -3,6 +3,8 @@
 Vim as a Ruby on Rails IDE with all the cool plugins and nifty configuration.
 Follow the simple installation guide and hack in no time!
 
+[See for yourself](https://raw.github.com/smolnar/dotfiles/ubuntu/screenshots/vim.png).
+
 ## Installation
 
 ### Requirements
@@ -10,7 +12,7 @@ Follow the simple installation guide and hack in no time!
 * **Vim/Gvim**
 * **Ruby, Rails, Bundler** ([rvm](https://rvm.io/rvm/install/) ftw!)
 * **Git**
-* **Zsh** (or Bash, but Zsh is preferred. If you use Bash, adjust the gvim_for_rails script.)
+* **Zsh** (or Bash, but Zsh is preferred. If you use Bash, adjust the `gvim_for_rails` script.)
 
 There are some core stuff that other plugin use. In order to make them work, you need to have
 these packages installed:
@@ -35,10 +37,10 @@ cd .vim-rails-bundle
 
 Choose what you want to install:
 
-* **`rake bundle:config`** symlinks `.vim` and `.vimrc` to your `$HOME` or other path if specified in `config.yml`.
-* **`rake bundle:gtk`** symlinks .gtkrc-2.0-vim in your `$HOME` or or other path if specified in `config.yml`. In order to load this file, it appends
-`include "...../.gtkrc-2.0-vim" to your `.gtkrc-2.0`.
-* **`rake bundle:desktop`** symlinks `.desktop` file in `/usr/share/applications/` and script file to run gvim in `/usr/bin`. Note, that we need `sudo`
+* **rake bundle:config** symlinks `.vim` and `.vimrc` to your `$HOME` or other path if specified in `config.yml`.
+* **rake bundle:gtk** symlinks .gtkrc-2.0-vim in your `$HOME` or or other path if specified in `config.yml`. In order to load this file, it appends
+`include "...../.gtkrc-2.0-vim"` to your `.gtkrc-2.0`.
+* **rake bundle:desktop** symlinks `.desktop` file in `/usr/share/applications` and script file to run gvim in `/usr/bin`. Note, that we need `sudo`
 for that.
 
 Now, run `vim`, `gvim_for_rails` or open `Gvim for Rails` and start hackin'!
@@ -46,7 +48,8 @@ Now, run `vim`, `gvim_for_rails` or open `Gvim for Rails` and start hackin'!
 ## Configuration
 ### Keyboard
 
-This is a list of keyboard mapping inside `vim.rc`. Change them according your taste.
+This bundle is shipped with some default keyboard mappings defined in `.vimrc`. Fell free to change them.
+
 `Leader` is a key defined in `let mapleader=...`. Bundle uses `,` as `Leader` by default.
 
 | Keys          | Action        |
@@ -70,7 +73,7 @@ This is a list of keyboard mapping inside `vim.rc`. Change them according your t
 | `CTRL` + `ALT` + n| Open new tab with the content of current text file. |
 | `ALT` + `Left`| Previous tab. |
 | `ALT` + `Right` | Next tab. |
-| `ALT` + *n* | Move to *n*-th tab, where n is from <0,9>. |
+| `ALT` + *n* | Move to *n*-th tab, where n is from 0..9. |
 | `Leader` + u | Uppercase all letters of current word. |
 | `Leader` + l | Lowercase all letters of current word. |
 | `Leader` + wu| Uppercase first letter of current word.|
@@ -101,7 +104,7 @@ This is a list of keyboard mapping inside `vim.rc`. Change them according your t
 | `CTRL` + o | Dialog for open file. |
 | `CTRL` + `ALT` + s | Save as dialog. |
 | `CTRL` + `ALT` + f | Choose font dialog. |
-| `ALT` + *n* | Choose *n*-th tab, where *n* is from <0, 9>. |
+| `ALT` + *n* | Choose *n*-th tab, where *n* is from 0..9. |
 
 ## Contribution
 
