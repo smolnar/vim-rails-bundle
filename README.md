@@ -37,11 +37,20 @@ cd .vim-rails-bundle
 
 Choose what you want to install:
 
-* **rake bundle:config** symlinks `.vim` and `.vimrc` to your `$HOME` or other path if specified in `config.yml`.
-* **rake bundle:gtk** symlinks .gtkrc-2.0-vim in your `$HOME` or or other path if specified in `config.yml`. In order to load this file, it appends
-`include "...../.gtkrc-2.0-vim"` to your `.gtkrc-2.0`.
-* **rake bundle:desktop** symlinks `.desktop` file in `/usr/share/applications` and script file to run gvim in `/usr/bin`. Note, that we need `sudo`
+<dl>
+  <dt>rake bundle:config</dt>
+  <dd>symlinks `.vim` and `.vimrc` to your `$HOME` or other path if specified in `config.yml`</dd>
+
+  <dt>rake bundle:gtk</dt>
+  <dd>symlinks `.gtkrc-2.0-vim` in your `$HOME` or or other path if specified in `config.yml`. In order to autoload this file, it appends
+`include "...../.gtkrc-2.0-vim"` to your `.gtkrc-2.0`</dd>
+
+  <dt>rake bundle:desktop</dt>
+  <dd>symlinks `gvim_for_rails.desktop` file in `/usr/share/applications` and `gvim_for_rails` script file to run gvim in `/usr/bin`. Note, that we need `sudo`
 for that.
+</dd>
+
+</dl>
 
 Now, run `vim`, `gvim_for_rails` or open `Gvim for Rails` and start hackin'!
 
@@ -49,62 +58,65 @@ Now, run `vim`, `gvim_for_rails` or open `Gvim for Rails` and start hackin'!
 ### Keyboard
 
 This bundle is shipped with some default keyboard mappings defined in `.vimrc`. Fell free to change them.
-
 `Leader` is a key defined in `let mapleader=...`. Bundle uses `,` as `Leader` by default.
+
+Note, that when pressing any `Leader` combo, you don't need to press all buttons at once. It's a sequence.
 
 | Keys          | Action        |
 | ------------- |:-------------:|
 | `Space` | Open all folds. |
-| `CTRL` + a| Go Home (at the beginning of a line. Emacs-like helper.)|
-| `CTRL` + e| Go to End (at the end of a line. Emacs-like helper.)|
-| `CTRL` + s| Save current file. (Works in Gvim out of the box. For terminal, set mapping of Ctrl - s.)|
-| `Leader` + q or `CTRL` + `ALT` + q| Quit current buffer or file. |
-| `CTRL` + `ALT` + w | Write and quit. |
+| `CTRL` + `a`| Go Home (at the beginning of a line. Emacs-like helper.)|
+| `CTRL` + `e`| Go to End (at the end of a line. Emacs-like helper.)|
+| `CTRL` + `s`| Save current file. (Works in Gvim out of the box. For terminal, set mapping of Ctrl - s.)|
+| `Leader` + `q` or `CTRL` + `ALT` + `q`| Quit current buffer or file. |
+| `CTRL` + `ALT` + `w` | Write and quit. |
 | `Leader` + `Space`| Get rid of all search highlights. |
-| `Leader` + h + s| Toggle highlight of search results. |
-| `Leader` + v| Split window vertically and switch to it.|
-| `Leader` + h| Split window horizontally and switch to it.|
-| `Leader` + t| Run [ctags](http://en.wikipedia.org/wiki/Ctags) silently. |
-| `Leader` + p| Paste from clipboard.|
-| `Leader` + y| Copy to clipboard. |
-| `Leader` + a| Run [Ack](http://betterthangrep.com/) search. (Search in current dir (CWD) for specified parrtern.) |
-| `Leader` + =| Format whole file. |
-| `CTRL` + n | Open new tab. |
-| `CTRL` + `ALT` + n| Open new tab with the content of current text file. |
+| `Leader` + `h` + `s`| Toggle highlight of search results. |
+| `Leader` + `v`| Split window vertically and switch to it.|
+| `Leader` + `h`| Split window horizontally and switch to it.|
+| `Leader` + `t`| Run [ctags](http://en.wikipedia.org/wiki/Ctags) silently. |
+| `Leader` + `p`| Paste from clipboard.|
+| `Leader` + `y`| Copy to clipboard. |
+| `Leader` + `a`| Run [Ack](http://betterthangrep.com/) search. (Search in current dir (CWD) for specified parrtern.) |
+| `Leader` + `=`| Format whole file. |
+| `CTRL` + `n` | Open new tab. |
+| `CTRL` + `ALT` + `n`| Open new tab with the content of current text file. |
 | `ALT` + `Left`| Previous tab. |
 | `ALT` + `Right` | Next tab. |
 | `ALT` + *n* | Move to *n*-th tab, where n is from 0..9. |
-| `Leader` + u | Uppercase all letters of current word. |
-| `Leader` + l | Lowercase all letters of current word. |
-| `Leader` + wu| Uppercase first letter of current word.|
-| `Leader` + wl| Lowercases first letter of current word.|
-| `Leader` + c + d| Change directory to the directory containing the file in the buffer.|
-| `Leader` + g + w| Swap two words. |
+| `Leader` + `u` | Uppercase all letters of current word. |
+| `Leader` + `l` | Lowercase all letters of current word. |
+| `Leader` + `w` + `u`| Uppercase first letter of current word.|
+| `Leader` + `w` + `l`| Lowercases first letter of current word.|
+| `Leader` + `c` + `d`| Change directory to the directory containing the file in the buffer.|
+| `Leader` + `g` + `w`| Swap two words. |
 | **Plugins** | |
-| `F3` or `Leader` + f | Start CtrlP search. (Kinda like CommandT in Textmate) |
+| `F3` or `Leader` + `f` | Start CtrlP search. (Kinda like CommandT in Textmate) |
 | `F4` | Start CtrlP search in open buffers. |
 | `F2` | Start CtrlP search dirs only. |
-| `Leader` + e + v | CtrlP search in app/views. |
-| `Leader` + e + c | CtrlP search in app/controllers.|
-| `Leader` + e + m | CtrlP search in app/models. |
-| `Leader` + g + u | Toggle Gundo undo list. |
-| `Leader` + g + s | Show git status by Fugitive plugin. |
-| `Leader` + g + c | Commit changes by Fugitive plugin. |a
-| `Leader` + g + d | See diff of current file by Fugitive plugin. |
+| `Leader` + `e` + `v` | CtrlP search in app/views. |
+| `Leader` + `e` + `c` | CtrlP search in app/controllers.|
+| `Leader` + `e` + `m` | CtrlP search in app/models. |
+| `Leader` + `g` + `u` | Toggle Gundo undo list. |
+| `Leader` + `g` + `s` | Show git status by Fugitive plugin. |
+| `Leader` + `g` + `c` | Commit changes by Fugitive plugin. |a
+| `Leader` + `g` + `d` | See diff of current file by Fugitive plugin. |
 | `F1` | Toggle NERDTree. |
-| `F6` or `Leader` + r + a | Rails command. |
-| `F7` or `Leader` + r + g | Rails generate command. |
-| `F8` or `Leader` + r + r | Rake command. |
-| `F9` or `Leader` + r + i | Initializers. (Empty argument leads to config/routes.rb) |
+| `F6` or `Leader` + `r` + `a` | Rails command. |
+| `F7` or `Leader` + `r`+ `g` | Rails generate command. |
+| `F8` or `Leader` + `r` + `r` | Rake command. |
+| `F9` or `Leader` + `r` + `i` | Initializers. (Empty argument leads to config/routes.rb) |
 | `Leader` + r + o | Go straight to config/routes.rb |
-| `F10` or `Leader` + r + m | Choose from app/models. |
-| `F11` or `Leader` + r + v | Choose from app/views. |
-| `F12` or `Leader` + r + c | Choose from app/controllers. |
+| `F10` or `Leader` + `r` + `m` | Choose from app/models. |
+| `F11` or `Leader` + `r` + `v` | Choose from app/views. |
+| `F12` or `Leader` + `r` + `c` | Choose from app/controllers. |
 |**GUI**||
-| `CTRL` + o | Dialog for open file. |
-| `CTRL` + `ALT` + s | Save as dialog. |
-| `CTRL` + `ALT` + f | Choose font dialog. |
+| `CTRL` + `o` | Dialog for open file. |
+| `CTRL` + `ALT` + `s` | Save as dialog. |
+| `CTRL` + `ALT` + `f` | Choose font dialog. |
 | `ALT` + *n* | Choose *n*-th tab, where *n* is from 0..9. |
+
+
 
 ## Contribution
 
