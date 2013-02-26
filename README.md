@@ -17,7 +17,7 @@ Follow the simple installation guide and hack in no time!
 There are some core stuff that other plugin use. In order to make them work, you need to have
 these packages installed:
 
-* **Curl + xclip** for [Gist.vim](https://github.com/vim-scripts/Gist.vim)
+* **Curl, xclip** for [Gist.vim](https://github.com/vim-scripts/Gist.vim)
 * **Ack** for [Ack.vim](https://github.com/mileszs/ack.vim)
 * **Clang** for [clang_complete.vim](https://github.com/Rip-Rip/clang_complete)
 
@@ -27,40 +27,36 @@ sudo apt-get install vim vim-gtk git curl ack-grep clang xclip
 ```
 For other distros or package managers, refer to package management documentation.
 
-### Setup
+## Setup
 
 Clone the repository:
 ```
 git clone git://github.com/smolnar/vim-rails-bundle.git .vim-rails-bundle
 cd .vim-rails-bundle
+git submodule init
+git submodule update
 ```
+
+For updating submodules, just go to `.vim/bundle/any-vim-plugin` and run `git pull`.
+For updating all submodules, go to repo root (`.vim-rails-bundle`) and run `git submodule foreach git pull`.
 
 Choose what you want to install:
 
-<dl>
-  <dt>rake bundle:config</dt>
-  <dd>symlinks `.vim` and `.vimrc` to your `$HOME` or other path if specified in `config.yml`</dd>
-
-  <dt>rake bundle:gtk</dt>
-  <dd>symlinks `.gtkrc-2.0-vim` in your `$HOME` or or other path if specified in `config.yml`. In order to autoload this file, it appends
-`include "...../.gtkrc-2.0-vim"` to your `.gtkrc-2.0`</dd>
-
-  <dt>rake bundle:desktop</dt>
-  <dd>symlinks `gvim_for_rails.desktop` file in `/usr/share/applications` and `gvim_for_rails` script file to run gvim in `/usr/bin`. Note, that we need `sudo`
-for that.
-</dd>
-
-</dl>
+* **rake bundle:config** - symlinks `.vim` and `.vimrc` to your `$HOME` or other path if specified in `config.yml`
+* **rake bundle:gtk** - symlinks `.gtkrc-2.0-vim` in your `$HOME` or or other path if specified in `config.yml`. In order to autoload this file, it appends
+`include "...../.gtkrc-2.0-vim"` to your `.gtkrc-2.0`.
+* **rake bundle:desktop** - symlinks `gvim_for_rails.desktop` file in `/usr/share/applications` and `gvim_for_rails` script file to run gvim in `/usr/bin`. Note, that we need `sudo` for that.
 
 Now, run `vim`, `gvim_for_rails` or open `Gvim for Rails` and start hackin'!
 
 ## Configuration
 ### Keyboard
 
-This bundle is shipped with some default keyboard mappings defined in `.vimrc`. Fell free to change them.
-`Leader` is a key defined in `let mapleader=...`. Bundle uses `,` as `Leader` by default.
+This bundle is shipped with some default keyboard mappings defined in `.vimrc`. Fell free to change them. I try to use as many comments as possible, but if you're not confident what the options does, refer to exhaustive [vim documantation](http://vimdoc.sourceforge.net/htmldoc/usr_toc.html).
 
-Note, that when pressing any `Leader` combo, you don't need to press all buttons at once. It's a sequence.
+
+`Leader` is a key defined in `let mapleader=...`. Bundle uses `,` as `Leader` by default.
+Note, that when pressing any `Leader` combo, you don't need to press all buttons at once. It's a sequence. 
 
 | Keys          | Action        |
 | ------------- |:-------------:|
