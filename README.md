@@ -1,7 +1,7 @@
 # Rails Bundle for Vim
 
 Vim as a Ruby on Rails IDE with all the cool plugins and nifty configuration.
-Follow the simple installation and hack in no time!
+Follow the simple installation guide and hack in no time!
 
 ## Installation
 
@@ -10,6 +10,7 @@ Follow the simple installation and hack in no time!
 * **Vim/Gvim**
 * **Ruby, Rails, Bundler** ([rvm](https://rvm.io/rvm/install/) ftw!)
 * **Git**
+* **Zsh** (or Bash, but Zsh is preferred. If you use Bash, adjust the gvim_for_rails script.)
 
 There are some core stuff that other plugin use. In order to make them work, you need to have
 these packages installed:
@@ -34,12 +35,19 @@ cd .vim-rails-bundle
 
 Choose what you want to install:
 
+* **`rake bundle:config`** symlinks `.vim` and `.vimrc` to your `$HOME` or other path if specified in `config.yml`.
+* **`rake bundle:gtk`** symlinks .gtkrc-2.0-vim in your `$HOME` or or other path if specified in `config.yml`. In order to load this file, it appends
+`include "...../.gtkrc-2.0-vim" to your `.gtkrc-2.0`.
+* **`rake bundle:desktop`** symlinks `.desktop` file in `/usr/share/applications/` and script file to run gvim in `/usr/bin`. Note, that we need `sudo`
+for that.
+
+Now, run `vim`, `gvim_for_rails` or open `Gvim for Rails` and start hackin'!
 
 ## Configuration
 ### Keyboard
 
 This is a list of keyboard mapping inside `vim.rc`. Change them according your taste.
-`Leader` is a key defined in `let mapleader=...`. Default setup in the bundle uses `,`.
+`Leader` is a key defined in `let mapleader=...`. Bundle uses `,` as `Leader` by default.
 
 | Keys          | Action        |
 | ------------- |:-------------:|
@@ -95,3 +103,28 @@ This is a list of keyboard mapping inside `vim.rc`. Change them according your t
 | `CTRL` + `ALT` + f | Choose font dialog. |
 | `ALT` + *n* | Choose *n*-th tab, where *n* is from <0, 9>. |
 
+## Contribution
+
+Vim configuration files are mainly based on [my dotfiles](https://github.com/smolnar/dotfiles), [kremso's dotfiles](https://github.com/kremso/dotfiles) and keyboard mappings in [Janus: Vim distribution](https://github.com/carlhuda/janus).
+
+If you know about some cool plugin that we've missed, send us a pull request.
+
+Follow the common rules:
+
+1. Fork it
+2. Create your feature branch (`git checkout -b my-new-feature`)
+3. Commit your changes (`git commit -am 'Added some feature'`)
+4. Push to the branch (`git push origin my-new-feature`)
+5. Create new Pull Request
+
+## License
+
+### This code is free to use under the terms of the MIT license.
+
+Copyright (c) 2013 Samuel Molnár
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
