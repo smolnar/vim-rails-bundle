@@ -70,7 +70,6 @@ This is a list of keyboard mapping inside `vim.rc`. Change them according your t
 | `Leader` + c + d| Change directory to the directory containing the file in the buffer.|
 | `Leader` + g + w| Swap two words. |
 | **Plugins** | |
-| ------------- |:-------------:|
 | `F3` or `Leader` + f | Start CtrlP search. (Kinda like CommandT in Textmate) |
 | `F4` | Start CtrlP search in open buffers. |
 | `F2` | Start CtrlP search dirs only. |
@@ -91,7 +90,6 @@ This is a list of keyboard mapping inside `vim.rc`. Change them according your t
 | `F11` or `Leader` + r + v | Choose from app/views. |
 | `F12` or `Leader` + r + c | Choose from app/controllers. |
 |**GUI**||
-| ------------- |:-------------:|
 | `CTRL` + o | Dialog for open file. |
 | `CTRL` + `ALT` + s | Save as dialog. |
 | `CTRL` + `ALT` + f | Choose font dialog. |
