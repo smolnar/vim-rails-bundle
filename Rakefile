@@ -8,15 +8,7 @@ namespace :bundle do
   PATH = Configuration.path.home || ENV['HOME']
 
   task :greeting do
-    Log.msg :green, <<EOF
-====================
-Rails Bundle for Vim
-====================
-
-Almost complete Ruby on Rails environment inside Vim.
-Contribute to https://github.com/smolnar/vim-rails-bundle for everlasting fame and all the women!
---------------------
-EOF
+    Log.msg :green, Configuration.greeting
   end
 
   desc "Install vim configurations"
@@ -66,7 +58,7 @@ EOF
   end
 
 
-  desc 'Install gtk roules for more fancy GVim look.'
+  desc 'Install gtk rules for more fancy GVim look.'
   task :gtk do
     Rake::Task['bundle:greeting'].invoke
 
