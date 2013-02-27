@@ -1,4 +1,4 @@
-version: &version 0.1
+version: 0.1
 
 path:
   home: # use custom path when needed
@@ -19,6 +19,6 @@ greeting: |
   Rails Bundle for Vim
   ====================
 
-  Almost complete Ruby on Rails environment inside Vim.
+  Ruby on Rails development environment inside Vim.
   Contribute to https://github.com/smolnar/vim-rails-bundle for everlasting fame and all the women!
   --------------------
