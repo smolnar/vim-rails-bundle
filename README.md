@@ -3,7 +3,12 @@
 Vim as a Ruby on Rails IDE with all the cool plugins and nifty configuration.
 Follow the simple installation guide and hack in no time! 
 
-[See for yourself]() (screencast).
+
+All plugins are listed in [bundle](https://github.com/smolnar/vim-rails-bundle/tree/master/.vim/bundle).
+
+[Screenshot](:q)
+[Video]()
+
 
 ## Installation
 
@@ -42,6 +47,14 @@ Install necessary gems:
 bundle install
 ```
 
+Choose what you want to install:
+
+* **rake bundle:config** symlinks `.vim` and `.vimrc` to your `$HOME` or other path if specified in `config.yml`
+* **rake bundle:gtk** symlinks `.gtkrc-2.0-vim` in your `$HOME` or or other path if specified in `config.yml`. In order to autoload this file, it appends
+`include "...../.gtkrc-2.0-vim"` to your `.gtkrc-2.0`.
+* **rake bundle:desktop** symlinks `gvim_for_rails.desktop` file in `/usr/share/applications` and `gvim_for_rails` script in `/usr/bin`. Note, that `sudo` is required.
+
+
 For updating submodules:
 ```
 cd .vim/bundle/any-vim-plugin
@@ -54,26 +67,9 @@ cd .vim-rails-bundle
 git submodule foreach git pull
 ```
 
-Choose what you want to install:
-
-* **rake bundle:config** symlinks `.vim` and `.vimrc` to your `$HOME` or other path if specified in `config.yml`
-* **rake bundle:gtk** symlinks `.gtkrc-2.0-vim` in your `$HOME` or or other path if specified in `config.yml`. In order to autoload this file, it appends
-`include "...../.gtkrc-2.0-vim"` to your `.gtkrc-2.0`.
-* **rake bundle:desktop** symlinks `gvim_for_rails.desktop` file in `/usr/share/applications` and `gvim_for_rails` script in `/usr/bin`. Note, that `sudo` is required.
-
 Now, run `vim`, `gvim_for_rails` or open `Gvim for Rails` and start hackin'!
 
 ## Configuration
-
-## UI 
-
-Gvim uses gtk fixes in `.gtkrc-2.0-vim` to set colors of gtk backround and tabs. Adjust these values as you like. 
-Default theme is Monokai colorscheme port from Textmate. If you want Monaco font (Textmate Monospaced font), follow (this guide) and then
-change font in `.vimrc` like this
-
-```
-set guifont=Monaco\ for\ Powerline\ 9
-```
 
 ### Keyboard
 
@@ -99,7 +95,7 @@ Note, that when pressing any `Leader` combo, you don't need to press all buttons
 | `Leader` + `q` or `CTRL` + `ALT` + `q`| Quit current buffer or file. |
 | `CTRL` + `ALT` + `w` | Write and quit. |
 | `Leader` + `Space`| Get rid of all search highlights. |
-| `Leader` + `h` + `s`| Toggle highlight of search results. |
+| `Leader` + `s` + `h`| Toggle highlight of search results. |
 | `Leader` + `v`| Split window vertically and switch to it.|
 | `Leader` + `h`| Split window horizontally and switch to it.|
 | `Leader` + `t`| Run [ctags](http://en.wikipedia.org/wiki/Ctags) silently. |
@@ -151,6 +147,16 @@ Note, that when pressing any `Leader` combo, you don't need to press all buttons
 | `m` | Modify hovered file/dir. |
 | `s` | Split hovered file/dir vertically. |
 
+
+### UI 
+
+Gvim uses gtk fixes in `.gtkrc-2.0-vim` to set colors of gtk backround and tabs. Adjust these values as you like. 
+Default theme is `Monokai` colorscheme port from Textmate. If you want Monaco font (Textmate Monospaced font), follow [this guide](https://gist.github.com/epegzz/1634235) and then
+change font in `.vimrc` like this
+
+```
+set guifont=Monaco\ for\ Powerline\ 9
+```
 
 ### Codes snippets
 This bundle uses [Snipmate Snippets](https://github.com/honza/snipmate-snippets), so check out the [Ruby and Rails snippets definitions](https://github.com/honza/snipmate-snippets/blob/master/snippets/ruby.snippets) to speed up your coding.
