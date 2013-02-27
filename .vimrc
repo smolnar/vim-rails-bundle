@@ -211,7 +211,7 @@
       map <Up> gk
 
       " Toggle hlsearch with <leader>hs
-      nmap <leader>hs :set hlsearch! hlsearch?<CR>
+      nmap <leader>sh :set hlsearch! hlsearch?<CR>
 
    " }}}
 
