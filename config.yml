@@ -9,6 +9,7 @@ vim:
   dir: .vim
   config: .vimrc
   gtk: .gtkrc-2.0-vim
+  tmp: [swap, backup]
 
 gvim:
   script: gvim_for_rails

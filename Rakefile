@@ -53,6 +53,13 @@ namespace :bundle do
     if warn
       Log.warn "Ooops. There's been some warning messages. You better check it out!"
     else
+
+      Configuration.vim.tmp.each do |d|
+        Log.info "Creating tmp dir #{d} in #{dir[:dest]}"
+
+        FileUtils.mkdir_p File.join(dir[:dest], 'tmp', d)
+      end
+
       Log.success "Yay! It's probably done! Hack on!"
     end
   end
