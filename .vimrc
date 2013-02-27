@@ -20,8 +20,8 @@
       set backup " create backup
       set backupdir=~/.vim/tmp/backup " where to put backup files
       set directory=~/.vim/tmp/swap " directory to place swap files in
-      set undodir=~/.vim/tmp/undo " directory to place undo files in
-      set undofile " create undo file
+      "set undodir=~/.vim/tmp/undo " directory to place undo files in
+      "set undofile " create undo file
       set mouse=a " use mouse for everything
       set equalalways " split windows equally
       set splitright splitbelow " new splits right from current and other below
@@ -53,8 +53,8 @@
       set gdefault  " global matching is default
       set smartcase " use smartcase, when search query starts with Uppercase, turn off case insensitive search
 
-      set list " show trailing characters
-      set listchars=tab:▸\ ,trail:¬,extends:❯,precedes:❮,nbsp:~ " it show ¬ character when as you type, fill free to comment out set list
+      "set list " show trailing characters
+      "set listchars=tab:▸\ ,trail:¬,extends:❯,precedes:❮,nbsp:~ " it show ¬ character when as you type, fill free to comment out set list
 
       set number " set line numbering
       set novisualbell " do not blink
@@ -160,7 +160,7 @@
       nnoremap <leader>h :split<CR>
 
       " tabs - moving around, (CTRL+n to new tab)
-      map <C-n> :tabnew<CR>
+      map <C-t> :tabnew<CR>
       map <C-M-n> :tabedit %<CR>
       map <M-Right> :tabnext<cr>
       map <M-Left> :tabprevious<cr>
