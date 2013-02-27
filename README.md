@@ -17,7 +17,6 @@ All plugins are listed in [bundle](https://github.com/smolnar/vim-rails-bundle/t
 * **Vim/Gvim**
 * **Ruby, Rails, Bundler** ([rvm](https://rvm.io/rvm/install/) ftw!)
 * **Git**
-* **Zsh** (or Bash, but Zsh is preferred. If you use Bash or other shell, adjust the `gvim_for_rails` script paths.)
 
 There are some core stuff that other plugin use. In order to make them work, you need to have
 these packages installed:
