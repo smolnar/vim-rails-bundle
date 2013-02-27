@@ -12,7 +12,7 @@ Follow the simple installation guide and hack in no time!
 * **Vim/Gvim**
 * **Ruby, Rails, Bundler** ([rvm](https://rvm.io/rvm/install/) ftw!)
 * **Git**
-* **Zsh** (or Bash, but Zsh is preferred. If you use Bash, adjust the `gvim_for_rails` script.)
+* **Zsh** (or Bash, but Zsh is preferred. If you use Bash or other shell, adjust the `gvim_for_rails` script paths.)
 
 There are some core stuff that other plugin use. In order to make them work, you need to have
 these packages installed:
@@ -37,13 +37,18 @@ git submodule init
 git submodule update
 ```
 
+Install necessary gems:
+```
+bundle install
+```
+
 For updating submodules:
 ```
 cd .vim/bundle/any-vim-plugin
 git pull
 ```
 
-For updating all submodules: 
+For updating all submodules at once:
 ```
 cd .vim-rails-bundle
 git submodule foreach git pull
@@ -51,21 +56,39 @@ git submodule foreach git pull
 
 Choose what you want to install:
 
-* **rake bundle:config** - symlinks `.vim` and `.vimrc` to your `$HOME` or other path if specified in `config.yml`
-* **rake bundle:gtk** - symlinks `.gtkrc-2.0-vim` in your `$HOME` or or other path if specified in `config.yml`. In order to autoload this file, it appends
+* **rake bundle:config** symlinks `.vim` and `.vimrc` to your `$HOME` or other path if specified in `config.yml`
+* **rake bundle:gtk** symlinks `.gtkrc-2.0-vim` in your `$HOME` or or other path if specified in `config.yml`. In order to autoload this file, it appends
 `include "...../.gtkrc-2.0-vim"` to your `.gtkrc-2.0`.
-* **rake bundle:desktop** - symlinks `gvim_for_rails.desktop` file in `/usr/share/applications` and `gvim_for_rails` script file to run gvim in `/usr/bin`. Note, that we need `sudo` for that.
+* **rake bundle:desktop** symlinks `gvim_for_rails.desktop` file in `/usr/share/applications` and `gvim_for_rails` script in `/usr/bin`. Note, that `sudo` is required.
 
 Now, run `vim`, `gvim_for_rails` or open `Gvim for Rails` and start hackin'!
 
 ## Configuration
+
+## UI 
+
+Gvim uses gtk fixes in `.gtkrc-2.0-vim` to set colors of gtk backround and tabs. Adjust these values as you like. 
+Default theme is Monokai colorscheme port from Textmate. If you want Monaco font (Textmate Monospaced font), follow (this guide) and then
+change font in `.vimrc` like this
+
+```
+set guifont=Monaco\ for\ Powerline\ 9
+```
+
 ### Keyboard
 
 This bundle is shipped with some default keyboard mappings defined in `.vimrc`. Fell free to change them. I try to use as many comments as possible, but if you're not confident what the options does, refer to exhaustive [vim documantation](http://vimdoc.sourceforge.net/htmldoc/usr_toc.html).
 
 
+If you like trailing characters (`▸`,`¬`,`❯`,`❮`), you can easy set it up by uncommenting the following lines:
+```
+set list
+set listchars...
+```
+in `.vimrc`.
+
 `Leader` is a key defined in `let mapleader=...`. Bundle uses `,` as `Leader` by default.
-Note, that when pressing any `Leader` combo, you don't need to press all buttons at once. It's a sequence. 
+Note, that when pressing any `Leader` combo, you don't need to press all buttons at once, it's a sequence. 
 
 | Keys          | Action        |
 | ------------- |:-------------:|
@@ -84,7 +107,7 @@ Note, that when pressing any `Leader` combo, you don't need to press all buttons
 | `Leader` + `y`| Copy to clipboard. |
 | `Leader` + `a`| Run [Ack](http://betterthangrep.com/) search. (Search in current dir (CWD) for specified parrtern.) |
 | `Leader` + `=`| Format whole file. |
-| `CTRL` + `n` | Open new tab. |
+| `CTRL` + `n` or `CTRL` + `t` | Open new tab. |
 | `CTRL` + `ALT` + `n`| Open new tab with the content of current text file. |
 | `ALT` + `Left`| Previous tab. |
 | `ALT` + `Right` | Next tab. |
@@ -119,8 +142,18 @@ Note, that when pressing any `Leader` combo, you don't need to press all buttons
 | `CTRL` + `o` | Dialog for open file. |
 | `CTRL` + `ALT` + `s` | Save as dialog. |
 | `CTRL` + `ALT` + `f` | Choose font dialog. |
-| `ALT` + *n* | Choose *n*-th tab, where *n* is from 0..9. |
+| `alt` + *n* | choose *n*-th tab, where *n* is from 0..9. |
+| **Navigation in NERDTree** |  |
+| `c` + `d` | Change directory to hovered dir. |
+| `Shift` + `i` | Show hidden files. |
+| `Shift` + `u` | Go up in directory structure. |
+| `Shift` + `c` | Go to hovered directory. |
+| `m` | Modify hovered file/dir. |
+| `s` | Split hovered file/dir vertically. |
 
+
+### Codes snippets
+This bundle uses [Snipmate Snippets](https://github.com/honza/snipmate-snippets), so check out the [Ruby and Rails snippets definitions](https://github.com/honza/snipmate-snippets/blob/master/snippets/ruby.snippets) to speed up your coding.
 
 
 ## Contribution
