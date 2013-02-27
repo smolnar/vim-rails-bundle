@@ -6,8 +6,9 @@ Follow the simple installation guide and hack in no time!
 
 All plugins are listed in [bundle](https://github.com/smolnar/vim-rails-bundle/tree/master/.vim/bundle).
 
-[Screenshot](:q)
-[Video]()
+[Screenshot](https://www.dropbox.com/s/a9srns8o0k09ugi/vim_rails_bundle.png)
+
+[Video](http://www.youtube.com/watch?v=hNW4gz7gwuY)
 
 
 ## Installation
