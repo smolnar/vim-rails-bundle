@@ -131,7 +131,7 @@ Note, that when pressing any `Leader` combo, you don't need to press all buttons
 | `F7` or `Leader` + `r`+ `g` | Rails generate command. |
 | `F8` or `Leader` + `r` + `r` | Rake command. |
 | `F9` or `Leader` + `r` + `i` | Initializers. (Empty argument leads to config/routes.rb) |
-| `Leader` + r + o | Go straight to config/routes.rb |
+| `Leader` + `r` + `o` | Go straight to config/routes.rb |
 | `F10` or `Leader` + `r` + `m` | Choose from app/models. |
 | `F11` or `Leader` + `r` + `v` | Choose from app/views. |
 | `F12` or `Leader` + `r` + `c` | Choose from app/controllers. |
