@@ -27,7 +27,7 @@ these packages installed:
 
 To satisfy requirements, run (Ubuntu only):
 ```
-sudo apt-get install vim vim-gtk git curl ack-grep clang xclip
+sudo apt-get install vim vim-gtk git curl ack ack-grep clang xclip
 ```
 For other distros or package managers, refer to package management documentation.
 
@@ -57,13 +57,13 @@ Choose what you want to install:
 For updating submodules:
 ```
 cd .vim/bundle/any-vim-plugin
-git pull
+git pull 
 ```
 
 For updating all submodules at once:
 ```
 cd .vim-rails-bundle
-git submodule foreach git pull
+git submodule foreach git pull # if git complains, just use git pull origin master
 ```
 
 Now, run `vim`, `gvim_for_rails` or open `Gvim for Rails` and start hackin'!
