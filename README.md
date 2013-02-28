@@ -1,4 +1,4 @@
-# Rails Bundle for Vim
+# Ruby on Rails Bundle for Vim
 
 Vim as a Ruby on Rails IDE with all the cool plugins and nifty configuration.
 Follow the simple installation guide and hack in no time! 
