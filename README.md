@@ -6,8 +6,7 @@ Follow the simple installation guide and hack in no time!
 
 All plugins are listed in [bundle](https://github.com/smolnar/vim-rails-bundle/tree/master/.vim/bundle).
 
-[Screenshot](https://www.dropbox.com/s/a9srns8o0k09ugi/vim_rails_bundle.png)
-
+[Screenshot](https://www.dropbox.com/s/a9srns8o0k09ugi/vim_rails_bundle.png) <br>
 [Video](http://www.youtube.com/watch?v=hNW4gz7gwuY)
 
 
@@ -158,7 +157,13 @@ change font in `.vimrc` like this
 set guifont=Monaco\ for\ Powerline\ 9
 ```
 
-### Codes snippets
+If you are not interested in relative numbering in Insert mode, comment out these lines in `.vimrc`
+```
+autocmd InsertEnter * :set relativenumber
+autocmd InsertLeave * :set number
+```
+
+### Code snippets
 This bundle uses [Snipmate Snippets](https://github.com/honza/snipmate-snippets), so check out the [Ruby and Rails snippets definitions](https://github.com/honza/snipmate-snippets/blob/master/snippets/ruby.snippets) to speed up your coding.
 
 
