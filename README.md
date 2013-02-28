@@ -9,7 +9,6 @@ All plugins are listed in [bundle](https://github.com/smolnar/vim-rails-bundle/t
 [Screenshot](https://www.dropbox.com/s/a9srns8o0k09ugi/vim_rails_bundle.png) <br>
 [Video](http://www.youtube.com/watch?v=hNW4gz7gwuY)
 
-
 ## Installation
 
 ### Requirements
@@ -67,6 +66,8 @@ git submodule foreach git pull # if git complains, just use git pull origin mast
 ```
 
 Now, run `vim`, `gvim_for_rails` or open `Gvim for Rails` and start hackin'!
+
+If something isn't woking for you, create [an issue](https://github.com/smolnar/vim-rails-bundle/issues).
 
 ## Configuration
 
