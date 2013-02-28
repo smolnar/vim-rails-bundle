@@ -1,5 +1,5 @@
 #! /bin/sh
 
-shell_cfg=$HOME/.$SHELLrc
+shell_cfg="$HOME/.$(basename $SHELL)rc"
 
-echo "source $shell_cfg; gvim; exit" | $SHELL
+echo "source \"$shell_cfg\"; gvim; exit" | $SHELL
