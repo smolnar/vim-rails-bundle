@@ -91,7 +91,8 @@ Note, that when pressing any `Leader` combo, you don't need to press all buttons
 | `CTRL` + `a`| Go Home (at the beginning of a line. Emacs-like helper.)|
 | `CTRL` + `e`| Go to End (at the end of a line. Emacs-like helper.)|
 | `CTRL` + `s`| Save current file. (Works in Gvim out of the box. For terminal, set mapping of Ctrl - s.)|
-| `Leader` + `q` or `CTRL` + `ALT` + `q`| Quit current buffer or file (If only one buffer or tab exists, it does not quit the window, but creates empty buffer instead). |
+| `Leader` + `q` | Quit current buffer (If there is only one tab or buffer, it quits the vim as well!) | 
+| `CTRL` + `ALT` + `q`| Quit current buffer or file (If only one buffer or tab exists, it does not quit the window, but creates empty buffer instead). |
 | `CTRL` + `ALT` + `w` | Write and quit. |
 | `Leader` + `Space`| Get rid of all search highlights. |
 | `Leader` + `s` + `h`| Toggle highlight of search results. |

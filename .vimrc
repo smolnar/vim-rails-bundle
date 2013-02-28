@@ -148,7 +148,7 @@
 
       " Quit like a pro
       nnoremap <C-M-q> :Kwbd<CR>
-      nnoremap <leader>q :Kwbd<CR>
+      nnoremap <leader>q :q<CR>
 
       " this key combination gets rid of the search highlights.
       nmap <leader><space> :noh<cr>
