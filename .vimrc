@@ -132,9 +132,9 @@
       nnoremap <space> :%foldopen<CR>
 
       " convenient window switching
-      map <C-h> <C-w>j
-      map <C-j> <C-w>k
-      map <C-k> <C-w>i
+      map <C-h> <C-w>h
+      map <C-j> <C-w>j
+      map <C-k> <C-w>k
       map <C-l> <C-w>l
 
       " Emacs-like keybindings
