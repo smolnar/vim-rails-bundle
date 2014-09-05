@@ -1,0 +1,12 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    colored (1.2)
+    settingslogic (2.0.9)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  colored
+  settingslogic

@@ -60,7 +60,15 @@ namespace :bundle do
         FileUtils.mkdir_p File.join(dir[:dest], 'tmp', d)
       end
 
-      Log.success "Yay! It's probably done! Hack on!"
+      Log.info 'Installing Vundle bundles by `vim +PluginInstall +qall`'
+
+      sleep 2
+
+      if system('vim +PluginInstall +qall')
+      	Log.success "Yay! It's probably done! Hack on!"
+      else
+      	Log.error "There was an error while installing bundles."
+      end
     end
   end
 
