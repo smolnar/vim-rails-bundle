@@ -15,7 +15,6 @@
     Bundle 'szw/vim-tags.git'
     Bundle 'bling/vim-airline'
     Bundle 'edkolev/tmuxline.vim'
-    "" Bundle 'bling/vim-bufferline'
   "" }}}
 
   "" Helpers & Formatters
@@ -32,7 +31,6 @@
     Bundle 'tpope/vim-surround'
     Bundle 'scrooloose/nerdcommenter'
     Bundle 'Raimondi/delimitMate'
-    " Bundle 'kremso/vim-spectator'
   "" }}}
 
   "" Languages
@@ -282,11 +280,15 @@
       " CSS, SCSS {{{
       augroup FTCss
         au!
-        au BufRead,BufNewFile *.scss.erb set ft=scss  " when erb-ing sccs, use scss code highlighting
-        autocmd FileType css,scss  silent! setlocal omnifunc=csscomplete#CompleteCSS " autocomplete function
+        au BufRead,BufNewFile *.scss.erb set ft=scss
+        autocmd FileType css,scss  silent! setlocal omnifunc=csscomplete#CompleteCSS
         autocmd FileType css,scss  setlocal iskeyword+=-
         autocmd FileType css,scss   setlocal ai et sta sw=2 sts=2
-      augroup END
+        autocmd FileType scss,sass  syntax cluster sassCssAttributes add=@cssColors
+        au FileType css,scss nnoremap <buffer> <leader>S ?{<CR>jV/\v^\s*\}?$<CR>k:sort<CR>:noh<CR>
+        " Make {<cr> insert a pair of brackets in such a way that the cursor is
+        " correctly positioned inside of them AND the following code doesn't get unfolded.
+        au FileType css,scss inoremap <buffer> {<cr> {}<left><cr>.<cr><esc>k==A<bs>
       " }}}
 
       " }}}
@@ -298,6 +300,10 @@
         autocmd FileType ruby,eruby             let g:rubycomplete_rails = 1
         autocmd FileType ruby,eruby             let g:rubycomplete_classes_in_global=1
         autocmd FileType ruby,eruby             let g:rubycomplete_buffer_loading = 1
+
+        " Rspec {{{
+        autocmd BufRead *_spec.rb syn keyword rubyRspec describe context it specify it_should_behave_like before after setup subject its shared_examples_for shared_context expect let double mock
+        highlight def link rubyRspec Identifier
       augroup END
       " }}}
 
@@ -318,12 +324,17 @@
         autocmd FileType gitcommit setlocal spell
       augroup END
       " }}}
-
-
     " }}}
 
     " Plugins
     " {{{
+
+      " Clang
+      " {{{
+      let g:clang_use_library=1
+      let g:clang_library_path="/usr/lib/"
+      let g:clang_periodic_quickfix=1 " update quickfix periodically
+      " }}}
 
       " Html5 plugin
       " {{{
@@ -340,22 +351,19 @@
       let g:html_indent_style1 = "inc"
       " }}}
 
-      " Statusline (vim-powerline)
+      " vim-airline
       " {{{
-      " Powerline statusbar
       set laststatus=2
-      set statusline=\ "
-      set statusline+=%f\ " file name
-      set statusline+=[
-      set statusline+=%{strlen(&ft)?&ft:'none'}, " filetype
-      set statusline+=%{&fileformat}] " file format
-      set statusline+=%#warningmsg#
-      set statusline+=%{SyntasticStatuslineFlag()}
-      set statusline+=%*
-      set statusline+=\ %{fugitive#statusline()}
-      set statusline+=%h%1*%m%r%w%0* " flag
-      set statusline+=%= " right align
-      set statusline+=%-14.(%l,%c%V%)\ %<%P " offset
+      let g:airline_powerline_fonts = 1
+      let g:airline_theme = 'powerlineish'
+      let g:airline_powerline_fonts=1
+      let g:airline_left_sep = '⮀'
+      let g:airline_left_alt_sep = '⮁'
+      let g:airline_right_sep = '⮂'
+      let g:airline_right_alt_sep = '⮃'
+      let g:airline_branch_prefix = '⭠ '
+      let g:airline_readonly_symbol = '⭤'
+      let g:airline_linecolumn_prefix = '⭡'
       " }}}
 
       " CtrlP
@@ -366,7 +374,7 @@
       nnoremap <F2> :CtrlPDir<CR>
       let g:ctrlp_custom_ignore = {
             \ 'dir':  '\v[\/]\.(git|hg|svn)$',
-            \ 'file': '\v\.(exe|so|dll)$'
+            \ 'file': '\v\.(exe|so|dll|png|jpg)$'
             \ }
 
       map <leader>f :CtrlP<cr>
@@ -385,12 +393,12 @@
       let g:gist_show_privates = 1
       " }}}
 
-      " supertab {{{
+      " Supertab {{{
       let g:SuperTabDefaultCompletionType = 'context'
       let g:SuperTabContextDefaultCompletionType = '<c-n>'
       " }}}
 
-      " syntastic {{{
+      " Syntastic {{{
       nnoremap <C-E> :SyntasticCheck<CR>
       let g:syntastic_auto_loc_list=1
       let g:syntastic_enable_signs=1
@@ -425,6 +433,7 @@
       "
       " NerdTree Tabs {{{
       nnoremap <c-F1> :NERDTreeTabsToggle<CR>
+      let g:nerdtree_tabs_open_on_gui_startup=0
       " }}}
 
       " Rails
@@ -447,9 +456,6 @@
       nnoremap <leader>rv :Rview 
       nnoremap <leader>rc :Rcontroller 
       nnoremap <leader>rm :Rmodel 
-
-      " set rails status line
-      let g:rails_statusline = 1
       " }}}
 
     " }}}
@@ -496,11 +502,8 @@
       imap <M-8> <Esc>8gt
       map  <M-9> 9gt
       imap <M-9> <Esc>9gt
-    " }}}
-
-
-      "
       " }}}
+    " }}}
     endif
     " }}}
 " }}}
@@ -568,5 +571,4 @@
 
   command! Kwbd call s:Kwbd(1)
   nnoremap <silent> <Plug>Kwbd :<C-u>Kwbd<CR>
-
 " }}}
