@@ -1,13 +1,65 @@
 " Init
 " {{{
-  runtime bundle/vim-pathogen/autoload/pathogen.vim
-
-  call pathogen#infect()
-  call pathogen#helptags()
-
   set nocompatible
-  syntax on
-  set encoding=utf-8
+  filetype off
+
+  set rtp+=~/.vim/bundle/vundle/
+  call vundle#rc()
+
+  Bundle 'gmarik/vundle'
+
+  " Core
+  " {{{
+    Bundle 'kien/ctrlp.vim'
+    Bundle 'tpope/vim-dispatch.git'
+    Bundle 'szw/vim-tags.git'
+    Bundle 'bling/vim-airline'
+    Bundle 'edkolev/tmuxline.vim'
+    "" Bundle 'bling/vim-bufferline'
+  "" }}}
+
+  "" Helpers & Formatters
+  "" {{{
+    Bundle 'sjl/gundo.vim'
+    Bundle 'scrooloose/nerdtree'
+    Bundle 'ervandew/supertab'
+    Bundle 'scrooloose/syntastic'
+    Bundle 'tomtom/tlib_vim'
+    Bundle 'tpope/vim-commentary'
+    Bundle 'tpope/vim-endwise'
+    Bundle 'tpope/vim-fugitive'
+    Bundle 'MarcWeber/vim-addon-mw-utils'
+    Bundle 'tpope/vim-surround'
+    Bundle 'scrooloose/nerdcommenter'
+    Bundle 'Raimondi/delimitMate'
+    " Bundle 'kremso/vim-spectator'
+  "" }}}
+
+  "" Languages
+  "" {{{
+    Bundle 'ap/vim-css-color'
+    Bundle 'othree/html5.vim'
+    Bundle 'pangloss/vim-javascript'
+    Bundle 'mustache/vim-mustache-handlebars'
+    Bundle 'tpope/vim-rails'
+    Bundle 'kchmck/vim-coffee-script'
+    Bundle 'vim-ruby/vim-ruby'
+    Bundle 'heartsentwined/vim-emblem'
+    Bundle 'smolnar/vim-ember-script'
+    Bundle 'tpope/vim-cucumber'
+  "" }}}
+
+  "" Tools
+  "" {{{
+    Bundle 'mattn/gist-vim'
+    Bundle 'mileszs/ack.vim'
+    Bundle 'tpope/vim-git'
+    Bundle 'tpope/vim-bundler'
+    Bundle 'tpope/vim-rake'
+    Bundle 'Rip-Rip/clang_complete'
+    Bundle 'thoughtbot/vim-rspec'
+    Bundle 'garbas/vim-snipmate'
+    Bundle 'smolnar/vim-snippets.git'
 " }}}
 
 " Settings
