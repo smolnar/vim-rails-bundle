@@ -5,7 +5,7 @@ Follow the simple installation guide and hack in no time!
 
 **Note**: We replaced old submodule architecture for bundles with neat [Vundle](https://github.com/gmarik/Vundle.vim), so
   there's no need to install submodules with Git anymore. We also ditched [Vim Powerline](https://github.com/Lokaltog/vim-powerline) in favor
-  of [Vim Airline](https://github.com/bling/vim-airline). If you have problems with fonts, please, refer to the [documentation of Vim Airline first](https://github.com/bling/vim-airline/wiki/FAQ).
+  of [Vim Airline](https://github.com/bling/vim-airline). If you have any problems with fonts and rendering of statusline, please, refer to the [documentation of Vim Airline](https://github.com/bling/vim-airline/wiki/FAQ) first.
 
 [Screenshot](https://www.dropbox.com/s/a9srns8o0k09ugi/vim_rails_bundle.png) <br>
 [Video](http://www.youtube.com/watch?v=hNW4gz7gwuY)
