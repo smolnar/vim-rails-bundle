@@ -274,7 +274,6 @@
         autocmd FileType html,xhtml,wml,cf      setlocal ai et sta sw=2 sts=2 " set indent size and stuff
         autocmd FileType xml,xsd,xslt           setlocal ai et sta sw=2 sts=2 ts=2
         autocmd FileType html setlocal iskeyword+=~
-
       augroup END
 
       " CSS, SCSS {{{
@@ -289,6 +288,7 @@
         " Make {<cr> insert a pair of brackets in such a way that the cursor is
         " correctly positioned inside of them AND the following code doesn't get unfolded.
         au FileType css,scss inoremap <buffer> {<cr> {}<left><cr>.<cr><esc>k==A<bs>
+      augroup END
       " }}}
 
       " }}}
