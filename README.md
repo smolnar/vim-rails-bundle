@@ -3,8 +3,9 @@
 Vim as a Ruby on Rails IDE with all the cool plugins and nifty configuration.
 Follow the simple installation guide and hack in no time! 
 
-
-All plugins are listed in [bundle](https://github.com/smolnar/vim-rails-bundle/tree/master/.vim/bundle).
+**Note**: We replaced old submodule architecture for bundles with neat [Vundle](https://github.com/gmarik/Vundle.vim), so
+  there's no need to install submodules with Git anymore. We also ditched [Vim Powerline](https://github.com/Lokaltog/vim-powerline) in favor
+  of [Vim Airline](https://github.com/bling/vim-airline). If you have problems with fonts, please, refer to the [documentation of Vim Airline first](https://github.com/bling/vim-airline/wiki/FAQ).
 
 [Screenshot](https://www.dropbox.com/s/a9srns8o0k09ugi/vim_rails_bundle.png) <br>
 [Video](http://www.youtube.com/watch?v=hNW4gz7gwuY)
@@ -36,6 +37,8 @@ Clone the repository:
 ```
 git clone git://github.com/smolnar/vim-rails-bundle.git .vim-rails-bundle
 cd .vim-rails-bundle
+
+# For Vundle
 git submodule init
 git submodule update
 ```
@@ -47,23 +50,10 @@ bundle install
 
 Choose what you want to install:
 
-* **rake bundle:config** symlinks `.vim` and `.vimrc` to your `$HOME` or other path if specified in `config.yml`
+* **rake bundle:config** symlinks `.vim` and `.vimrc` to your `$HOME` or other path if specified in `config.yml` and install Vundle bundles automatically.
 * **rake bundle:gtk** symlinks `.gtkrc-2.0-vim` in your `$HOME` or or other path if specified in `config.yml`. In order to autoload this file, it appends
 `include "...../.gtkrc-2.0-vim"` to your `.gtkrc-2.0`.
 * **rake bundle:desktop** symlinks `gvim_for_rails.desktop` file in `/usr/share/applications` and `gvim_for_rails` script in `/usr/bin`. Note, that `sudo` is required.
-
-
-For updating submodules:
-```
-cd .vim/bundle/any-vim-plugin
-git pull 
-```
-
-For updating all submodules at once:
-```
-cd .vim-rails-bundle
-git submodule foreach git pull # if git complains, just use git pull origin master
-```
 
 Now, run `vim`, `gvim_for_rails` or open `Gvim for Rails` and start hackin'!
 
