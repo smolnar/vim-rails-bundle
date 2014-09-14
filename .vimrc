@@ -168,8 +168,8 @@
       autocmd BufWritePre * :call TrimWhiteSpace()
 
       " Use relative numbering in insert mode
-      autocmd InsertEnter * :set relativenumber
-      autocmd InsertLeave * :set number
+      autocmd InsertEnter * :set nonumber relativenumber
+      autocmd InsertLeave * :set norelativenumber number
 
     "}}}
 
