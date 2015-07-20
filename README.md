@@ -27,7 +27,7 @@ these packages installed:
 
 To satisfy requirements, run (Ubuntu only):
 ```
-sudo apt-get install vim vim-gtk git curl ack ack-grep clang xclip
+sudo apt-get install vim vim-gtk git curl ack-grep clang xclip
 ```
 For other distros or package managers, refer to package management documentation.
 
@@ -46,6 +46,11 @@ git submodule update
 Install necessary gems:
 ```
 bundle install
+```
+
+Install plugins by Vundle
+```
+vim +PluginInstall +qall
 ```
 
 Choose what you want to install:
