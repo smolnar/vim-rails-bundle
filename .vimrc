@@ -442,20 +442,20 @@
       nnoremap <F6> :Rails 
       nnoremap <F7> :Rgenerate 
       nnoremap <F8> :Rake 
-      nnoremap <F9> :Rinitializer 
-      nnoremap <F10> :Rmodel 
-      nnoremap <F11> :Rview 
-      nnoremap <F12> :Rcontroller 
+      nnoremap <F9> :Einitializer 
+      nnoremap <F10> :Emodel 
+      nnoremap <F11> :Eview 
+      nnoremap <F12> :Econtroller 
 
       nnoremap <leader>ra :Rails 
       nnoremap <leader>rg :Rgenerate 
       nnoremap <leader>rr :Rake 
-      nnoremap <leader>ri :Rinitializer 
+      nnoremap <leader>ri :Einitializer 
       " routes leads to empty initializer path
-      nnoremap <leader>ro :Rinitializer<CR>
-      nnoremap <leader>rv :Rview 
-      nnoremap <leader>rc :Rcontroller 
-      nnoremap <leader>rm :Rmodel 
+      nnoremap <leader>ro :Einitializer<CR>
+      nnoremap <leader>rv :Eview 
+      nnoremap <leader>rc :Econtroller 
+      nnoremap <leader>rm :Emodel 
       " }}}
 
     " }}}
